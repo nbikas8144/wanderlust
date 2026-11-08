@@ -1,0 +1,51 @@
+<%- layout("/layout/boilerplate.ejs") %>
+
+<h2 class="mt-5">SignUp</h2>
+ <div class="row">
+    <div class="col-6 mt-3">
+        <!-- Flash Messages -->
+<% if (error && error.length > 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<% if (success && success.length > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+ 
+        <form method="post" action="/signup" novalidate class="needs-validation">
+
+        <!--Username-->
+        <div class="mb-3">
+        <label for="username" class="form-label">Enter Username : </label>
+        <input type="text" name="username" placeholder="username123" class="form-control" id="username" required>
+        <div class="valid-feedback">✅</div>
+        <div class="invalid-feedback">Invalid Username</div>
+        </div >
+
+        <!--email-->
+        <div class="mb-3">
+        <label for="email" class="form-label">Enter email : </label>
+        <input type="email" name="email" placeholder="user@gmail.com" class="form-control" id="email" required>
+        <div class="valid-feedback">✅</div>
+        <div class="invalid-feedback">Invalid Username</div>
+        </div >
+
+        <!--password-->
+        <div class="mb-3">
+        <label for="password" class="form-label">Enter Password : </label>
+        <input type="password" name="password" placeholder="password" class="form-control" id="password" required>
+        <div class="valid-feedback">✅</div>
+        <div class="invalid-feedback">Invalid Username</div>
+        </div >
+
+        <button class="btn btn-success mb-5">SignUp</button>
+        
+        </form>
+    </div>
+</div>

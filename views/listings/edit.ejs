@@ -1,0 +1,61 @@
+<%- layout("/layout/boilerplate.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddRoute</title>
+</head>
+<body>
+     <div class="row mt-5">
+        <div class="col-8">
+   
+    <h1>
+        Edit your Listing
+    </h1>
+   
+    <form method="post" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" class="form-label">Enter Title : </label>
+        <input type="text" name="listing[title]" value="<%= listing.title  %>" class="form-control"  required>
+        <div class="invalid-feedback">Title should be valid</div>
+        <div class="valid-feedback">Title looks good</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="desciption" class="form-label">Enter Description : </label>
+        <textarea type="text" name="listing[description]" class="form-control" required><%= listing.description  %> </textarea>
+        <div class="invalid-feedback">Description should be valid</div>
+        <div class="valid-feedback">Description  looks good</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="image" class="form-label">Enter Image : </label>
+        <input type="url" name="listing[image]" value="<%= listing.image %>" class="form-control" required>
+        <div class="invalid-feedback">Image URL should be valid</div>
+        <div class="valid-feedback">Image URL looks good</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="price" class="form-label">Enter Price : </label>
+        <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control" required>
+        <div class="invalid-feedback">Price should be valid</div>
+        <div class="valid-feedback">Price looks good</div>
+        </div>
+
+
+        <div class="mb-3">
+        <label for="location" class="form-label">Enter Location : </label>
+        <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control" required>
+         <div class="invalid-feedback">Location should be valid</div>
+        <div class="valid-feedback">Location looks good</div>
+        </div>
+
+        <button class="btn btn-dark edit-btn mt-5">Update</button>
+        
+    </form>
+    </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html> 
